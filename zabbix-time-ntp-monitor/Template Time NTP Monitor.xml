@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2019-01-15T19:07:56Z</date>
+    <date>2019-01-15T20:36:01Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -74,7 +74,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>time.offset['{$NTPSERVER}']</key>
+                    <key>time.offset[{$NTPSERVER}]</key>
                     <delay>1m</delay>
                     <history>90d</history>
                     <trends>365d</trends>
@@ -210,9 +210,9 @@ or&#13;
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template Time NTP Monitor:time.offset['{$NTPSERVER}'].last()}&gt;{$MAXTIMEOFFSET}&#13;
+            <expression>{Template Time NTP Monitor:time.offset[{$NTPSERVER}].last()}&gt;{$MAXTIMEOFFSET}&#13;
 or&#13;
-{Template Time NTP Monitor:time.offset['{$NTPSERVER}'].last()}&lt;-{$MAXTIMEOFFSET}</expression>
+{Template Time NTP Monitor:time.offset[{$NTPSERVER}].last()}&lt;-{$MAXTIMEOFFSET}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Time: Offset over {$MAXTIMEOFFSET} second on {HOST.NAME}</name>
