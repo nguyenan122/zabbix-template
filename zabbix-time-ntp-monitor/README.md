@@ -1,8 +1,11 @@
 1. Import template to zabbix (version >3)
 
 2. Setting zabbix_agent
-# vim /etc/zabbix/zabbix_agentd.d/userparameter_time.conf
+
+vim /etc/zabbix/zabbix_agentd.d/userparameter_time.conf
+
 UserParameter=time.drift[*],if [ -f /var/lib/ntp/drift ]; then cat /var/lib/ntp/drift; else echo 0; fi
 UserParameter=time.offset[*],ntpdate -p 1 -q $1 | grep -oP '(?<=offset ).*?(?= sec)'
 UserParameter=time.running,ps aux | grep ntp | grep -v grep | wc -l
 
+3. Restart zabbix agent
