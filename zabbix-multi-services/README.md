@@ -1,8 +1,11 @@
 1. Tải + Copy scripts "check_multi_services.sh" lên thư mục /etc/zabbix/scripts của server
 
 2. Thay đổi tham số theo services cần check.
+
 list="1;CrossSale_SMPP_v2.jar;1
+
 2;apache-tomcat-8.0.47;crosssale;1
+
 2;redis-server;6379;1" 
 
 Giải thích
